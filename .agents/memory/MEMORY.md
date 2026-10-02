@@ -1,0 +1,2 @@
+- [Offline Mind content safety](offline-mind-content-safety.md) — Keep support guidance non-diagnostic; never invent Morocco-specific providers, sources, or emergency details.
+- [Workspace build PORT](workspace-build-port.md) — The root recursive build needs PORT set because sibling artifact builds also load Vite configs.

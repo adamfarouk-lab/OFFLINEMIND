@@ -1,0 +1,772 @@
+Continue working on the existing OFFLINE MIND project.
+
+IMPORTANT:
+
+* Inspect the existing implementation first.
+* Do not start over.
+* Do not redesign the homepage from scratch.
+* Preserve the current OFFLINE MIND identity and editorial design.
+* Do not change, redraw, recreate, or modify the logo.
+* Do not introduce a new visual identity.
+* Do not add unnecessary dependencies.
+* Reuse existing components wherever possible.
+* Do not create duplicate components.
+* Do not modify unrelated sections unless required for this task.
+* Keep the existing homepage copy and structure unless a small routing or styling change is necessary.
+* Run `npm run build` at the end and fix all errors.
+
+# OFFLINE MIND
+
+Tagline:
+
+"A quiet place to understand what you're going through."
+
+OFFLINE MIND is a mental-health information, guidance, and self-help resource.
+
+It is NOT:
+
+* a social network
+* a forum
+* a community feed
+* a diagnosis tool
+* an AI therapist
+* a medical clinic
+* a psychiatric clinic
+* a generic wellness SaaS product
+
+The goal is to help someone:
+
+Understand what they may be experiencing → try something practical → know when professional help may be useful → find real support.
+
+---
+
+# 1. GLOBAL BACKGROUND — IMPORTANT
+
+The current website uses a white background.
+
+Change the dominant website background to a **muted dark blue**.
+
+I specifically do NOT want:
+
+* white as the dominant background
+* pure black
+* almost-black navy
+* a typical "dark mode"
+* a bright saturated blue
+* a neon blue
+* a purple-blue gradient
+
+I want the website to feel:
+
+* calm
+* slightly dark
+* quiet
+* immersive
+* modern
+* trustworthy
+* sophisticated
+* comfortable to read
+
+The background should be **dark enough to clearly feel different from a white website, but light enough that the site does not feel gloomy or oppressive.**
+
+## Use the official OFFLINE MIND palette
+
+Primary dark blue:
+#1B3C53
+
+Secondary blue:
+#234C6A
+
+Supporting blue:
+#456882
+
+Warm accent:
+#D2C1B6
+
+## Background hierarchy
+
+Use:
+
+### Main website background
+
+#234C6A
+
+This should be the dominant page background.
+
+### Darker sections
+
+#1B3C53
+
+Use this for:
+
+* navigation when appropriate
+* footer
+* strong hero areas
+* important dark sections
+* high-contrast areas
+
+### Supporting surfaces
+
+#456882
+
+Use this for:
+
+* subtle content surfaces
+* secondary cards
+* interactive areas
+* borders or muted accents
+* visual separation
+
+### Warm accent
+
+#D2C1B6
+
+Use sparingly for:
+
+* highlighted text
+* selected states
+* small decorative accents
+* subtle borders
+* important secondary highlights
+* occasional warm sections
+
+Do not use #D2C1B6 as the entire website background.
+
+---
+
+# 2. TEXT AND CONTRAST
+
+Because the main background is now dark blue, adapt text colors appropriately.
+
+Primary text on dark backgrounds should be a very light neutral.
+
+Do NOT use dark navy text directly on #234C6A.
+
+Use:
+
+* light text for primary content
+* slightly muted light text for secondary descriptions
+* #D2C1B6 selectively for accents
+
+Make sure all text has sufficient contrast.
+
+Do not sacrifice accessibility for aesthetics.
+
+The website should NOT look like a generic dark-mode dashboard.
+
+---
+
+# 3. IMPORTANT VISUAL RULE
+
+Do not make every element dark blue.
+
+Create visual hierarchy using the existing palette.
+
+For example:
+
+Background:
+#234C6A
+
+Darker section:
+#1B3C53
+
+Supporting surface:
+#456882
+
+Accent:
+#D2C1B6
+
+Text:
+light neutral
+
+This should create depth without requiring gradients.
+
+Avoid excessive shadows.
+
+Avoid glassmorphism.
+
+Avoid huge glowing effects.
+
+Avoid gradients unless absolutely necessary.
+
+---
+
+# 4. PRESERVE THE EXISTING LOGO
+
+Keep using the existing uploaded OFFLINE MIND logo.
+
+Do not redesign it.
+
+Do not recreate it with text.
+
+Do not alter its proportions.
+
+Current temporary asset:
+
+public/Brand/offline-mind-black.png
+
+Later it will be replaced by:
+
+public/Brand/offline-mind-black.svg
+
+Keep the logo behind a reusable Logo component/reference so the asset can be replaced later without changing the layout.
+
+If the black logo becomes difficult to read against the new dark background, do NOT modify the logo file.
+
+Instead, use the existing white logo asset if it already exists in the project.
+
+If the white logo does not exist, keep the current logo implementation unchanged rather than recreating or editing the logo.
+
+---
+
+# 5. BUILD THE COMPLETE "WHAT I'M FEELING" EXPERIENCE
+
+Build the next section of OFFLINE MIND: What I'm Feeling.
+
+The homepage currently contains:
+
+"What are you going through?"
+
+with:
+
+* I feel anxious
+* I feel really down
+* I feel empty
+* I feel alone
+* I can't stop overthinking
+* I have no motivation
+* I feel overwhelmed
+* I feel angry
+* I feel scared
+* I can't sleep
+* I don't know
+
+Make these functional.
+
+---
+
+# 6. /feelings
+
+Create or complete:
+
+/feelings
+
+The page should have a calm editorial layout.
+
+Suggested introduction:
+
+"What are you feeling?"
+
+"You don't need the perfect words. Start with whatever feels closest."
+
+Then display:
+
+1. I feel anxious
+2. I feel really down
+3. I feel empty
+4. I feel alone
+5. I can't stop overthinking
+6. I have no motivation
+7. I feel overwhelmed
+8. I feel angry
+9. I feel scared
+10. I can't sleep
+11. I don't know
+
+Each item must be clickable.
+
+Do not turn this into a dashboard.
+
+Do not make every item a huge rounded card.
+
+Use typography, spacing, subtle borders, restrained surfaces, and the existing editorial style.
+
+---
+
+# 7. FEELING DATA
+
+Use:
+
+src/data/feelings.ts
+
+Do not hard-code all content inside the page component.
+
+Use structured TypeScript data.
+
+Each feeling should contain appropriate fields such as:
+
+* slug
+* title
+* shortDescription
+* introduction
+* whatMightBeHappening
+* thingsToTry
+* nextFewDays
+* professionalHelp
+* relatedSituations
+* relatedTools
+* urgentHelpRelevant
+
+Use reusable types where appropriate.
+
+---
+
+# 8. FEELING ROUTES
+
+Create:
+
+/feelings/anxiety
+/feelings/feeling-down
+/feelings/emptiness
+/feelings/loneliness
+/feelings/overthinking
+/feelings/low-motivation
+/feelings/overwhelm
+/feelings/anger
+/feelings/fear
+/feelings/sleep-problems
+/feelings/dont-know
+
+Use the existing React Router architecture.
+
+Direct URLs must work.
+
+Browser back/forward must work.
+
+Refreshing a detail page must not break the application.
+
+Unknown slugs should use the existing 404 experience.
+
+---
+
+# 9. REUSABLE FEELING GUIDE
+
+Create or reuse a component such as:
+
+src/components/content/FeelingGuide.tsx
+
+Do not duplicate the same layout for every feeling.
+
+Each guide should contain:
+
+## 1. Title
+
+Example:
+
+"Feeling anxious"
+
+## 2. Short introduction
+
+Explain the experience without diagnosing.
+
+Example style:
+
+"Anxiety can show up as worry, tension, restlessness, or a sense that something might go wrong."
+
+Do not say:
+
+"You have anxiety."
+
+---
+
+## 3. What might be happening?
+
+Explain possible experiences using language such as:
+
+"You might notice..."
+
+"Sometimes..."
+
+"It can feel like..."
+
+"For some people..."
+
+Do not present symptoms as proof of a disorder.
+
+---
+
+## 4. What you can try right now
+
+Give practical, low-risk suggestions.
+
+Examples:
+
+* slow breathing
+* grounding
+* moving somewhere quieter
+* drinking water
+* writing down thoughts
+* talking to someone trusted
+* taking one small next step
+
+---
+
+## 5. What may help over the next few days
+
+Examples:
+
+* maintaining a basic routine
+* getting enough rest
+* eating regularly when possible
+* reducing overwhelming demands
+* talking with someone supportive
+* writing down recurring thoughts
+* considering professional support if the problem continues or interferes with daily life
+
+Do not claim these actions cure mental-health conditions.
+
+---
+
+## 6. When professional help may be useful
+
+Explain when speaking with a psychologist, psychiatrist, doctor, or other qualified professional may be appropriate.
+
+Use neutral language.
+
+---
+
+## 7. Related situations
+
+Link only to existing situation routes.
+
+---
+
+## 8. Related tools
+
+Link only to existing tool routes.
+
+---
+
+## 9. Urgent help
+
+Where appropriate, provide a restrained notice linking to:
+
+/urgent-help
+
+Do not invent emergency numbers or Morocco-specific resources.
+
+---
+
+# 10. "I DON'T KNOW"
+
+Create:
+
+/feelings/dont-know
+
+This is an important part of OFFLINE MIND.
+
+The user does not need to know exactly what they are feeling.
+
+Use a message such as:
+
+"You don't need to know exactly what you're feeling before you start."
+
+Then provide simple starting points:
+
+* Heavy
+* Numb
+* Restless
+* Scared
+* Alone
+* Angry
+* Lost
+* Exhausted
+* Overwhelmed
+* I don't know
+
+This is NOT a diagnosis questionnaire.
+
+Do not create:
+
+* scores
+* results
+* psychological tests
+* diagnosis
+* personality types
+
+The purpose is simply to help the person find somewhere to begin.
+
+---
+
+# 11. HOMEPAGE INTEGRATION
+
+Do not redesign the homepage.
+
+Only make the existing feeling options functional.
+
+Map them to:
+
+I feel anxious → /feelings/anxiety
+
+I feel really down → /feelings/feeling-down
+
+I feel empty → /feelings/emptiness
+
+I feel alone → /feelings/loneliness
+
+I can't stop overthinking → /feelings/overthinking
+
+I have no motivation → /feelings/low-motivation
+
+I feel overwhelmed → /feelings/overwhelm
+
+I feel angry → /feelings/anger
+
+I feel scared → /feelings/fear
+
+I can't sleep → /feelings/sleep-problems
+
+I don't know → /feelings/dont-know
+
+"See all feelings" → /feelings
+
+Preserve the existing homepage design and copy.
+
+---
+
+# 12. DESIGN LANGUAGE
+
+The updated OFFLINE MIND design should feel like:
+
+**A calm, dark editorial resource center.**
+
+Use:
+
+* generous whitespace
+* strong typography
+* large readable headings
+* comfortable reading widths
+* restrained borders
+* subtle surfaces
+* subtle animations
+* clear hierarchy
+* calm dark-blue atmosphere
+
+Avoid:
+
+* generic SaaS
+* dashboard UI
+* excessive rounded cards
+* excessive gradients
+* glowing neon effects
+* excessive glassmorphism
+* giant colorful blobs
+* cliché brain graphics
+* childish illustrations
+* generic stock imagery
+* excessive shadows
+
+The darkness should feel **quiet and sophisticated**, not depressing.
+
+---
+
+# 13. TYPOGRAPHY
+
+Keep the existing typography if already configured.
+
+If typography still needs to be configured, use a modern readable sans-serif such as Inter.
+
+Do not introduce multiple unrelated fonts.
+
+Prioritize:
+
+* readability
+* comfortable line height
+* clear hierarchy
+* mobile readability
+
+---
+
+# 14. ACCESSIBILITY
+
+Ensure:
+
+* semantic HTML
+* correct heading hierarchy
+* keyboard navigation
+* visible focus states
+* accessible links
+* accessible buttons
+* sufficient contrast
+* touch-friendly controls
+* no information communicated only through color
+* reduced-motion support where appropriate
+
+The dark background must still meet accessibility contrast requirements.
+
+---
+
+# 15. RESPONSIVE DESIGN
+
+The website must work correctly on:
+
+* mobile
+* tablet
+* laptop
+* desktop
+
+Mobile is especially important.
+
+Ensure:
+
+* no horizontal scrolling
+* readable text
+* comfortable spacing
+* large enough tap targets
+* navigation remains usable
+* content does not feel cramped
+
+---
+
+# 16. CONTENT SAFETY
+
+OFFLINE MIND must not diagnose users.
+
+Do not write:
+
+"You have depression."
+
+Prefer:
+
+"Feeling very low can happen for many different reasons."
+
+Do not claim that a particular exercise cures anxiety, depression, trauma, or another condition.
+
+Do not invent medical facts.
+
+Do not invent Moroccan:
+
+* psychologists
+* psychiatrists
+* clinics
+* organizations
+* emergency numbers
+* addresses
+* services
+
+Only add verified resources later.
+
+---
+
+# 17. DO NOT ADD THESE FEATURES
+
+Do NOT add:
+
+* authentication
+* Supabase
+* accounts
+* social features
+* comments
+* posts
+* profiles
+* likes
+* followers
+* notifications
+* public journals
+* AI chatbot
+* AI therapist
+* diagnosis system
+* psychological scoring
+* analytics
+* advertising
+* payment system
+* donation system
+
+Only implement:
+
+1. the new dark-blue background treatment
+2. the complete Feelings experience
+3. necessary routing integration
+
+---
+
+# 18. CODE QUALITY
+
+Before changing anything:
+
+1. Inspect the existing project.
+2. Identify the existing routing structure.
+3. Identify reusable components.
+4. Identify the existing theme/color configuration.
+5. Identify how the homepage currently works.
+6. Reuse existing architecture.
+
+Do not duplicate components.
+
+Centralize the colors.
+
+If possible, define the palette through CSS variables or the existing Tailwind theme so the colors remain consistent throughout the project.
+
+Use:
+
+--color-primary: #1B3C53
+--color-secondary: #234C6A
+--color-supporting: #456882
+--color-accent: #D2C1B6
+
+The dominant background should use:
+
+#234C6A
+
+The darker background should use:
+
+#1B3C53
+
+Do not introduce arbitrary blue colors elsewhere.
+
+---
+
+# 19. FINAL VISUAL CHECK
+
+Before finishing, visually check the site.
+
+The final result should NOT look like:
+
+* a white website with a few blue sections
+* a generic dark-mode dashboard
+* a black mental-health website
+* a neon cyberpunk website
+
+It should look like:
+
+**OFFLINE MIND — calm, dark blue, editorial, human, private, modern, and trustworthy.**
+
+The background should immediately communicate the OFFLINE MIND identity.
+
+---
+
+# 20. BUILD VERIFICATION
+
+Run:
+
+npm run build
+
+Fix all errors.
+
+Verify:
+
+* homepage still works
+* homepage design remains intact
+* /feelings works
+* all feeling routes work
+* /feelings/dont-know works
+* unknown feeling routes show 404
+* browser navigation works
+* direct URLs work
+* mobile layout works
+* logo works
+* background is no longer pure white
+* #234C6A is the dominant background
+* #1B3C53 is used for darker sections
+* #456882 is used for supporting surfaces
+* #D2C1B6 is used as a restrained accent
+* text remains readable
+* contrast remains accessible
+* no unrelated functionality was added
+* no unrelated sections were redesigned
+
+Do not finish until:
+
+npm run build
+
+completes successfully.

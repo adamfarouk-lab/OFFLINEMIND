@@ -1,0 +1,1019 @@
+I am about to export this project from Replit and continue development in VS Code.
+
+Before I export it, I want you to perform a COMPLETE codebase audit and create a detailed handoff for another developer/AI assistant who will continue working on the project.
+
+IMPORTANT:
+
+* Do NOT redesign the website.
+* Do NOT change the visual identity.
+* Do NOT change the logo.
+* Do NOT add new features.
+* Do NOT rewrite content just for stylistic reasons.
+* Do NOT introduce Supabase, authentication, analytics, payments, social features, or unnecessary dependencies.
+* Do NOT invent Morocco-specific mental-health professionals, organizations, emergency numbers, addresses, or medical resources.
+* Do NOT make speculative changes.
+* Inspect the existing implementation FIRST.
+* Only fix genuine technical errors that prevent the project from working correctly.
+* This is an AUDIT + DOCUMENTATION task, not a redesign task.
+
+==================================================
+
+1. FULL PROJECT INSPECTION
+   ==================================================
+
+Inspect the ENTIRE project/workspace.
+
+Check:
+
+* package.json
+* package-lock.json or other lockfile
+* vite configuration
+* TypeScript configuration
+* Tailwind configuration
+* PostCSS configuration if present
+* index.html
+* src/
+* public/
+* all components
+* all pages
+* all data files
+* all hooks
+* all utilities
+* all types
+* all routing
+* all assets
+* all configuration files
+* all environment-variable references
+* all imports
+* all dependencies
+
+Determine what the application actually contains RIGHT NOW.
+
+Do not assume that the intended architecture and the actual architecture are identical.
+
+The actual codebase is the source of truth.
+
+==================================================
+2. CREATE PROJECT_HANDOFF.md
+============================
+
+Create:
+
+PROJECT_HANDOFF.md
+
+This must be a detailed technical handoff document for another developer/AI assistant.
+
+Include ALL of the following.
+
+---
+
+## A. PROJECT OVERVIEW
+
+Explain:
+
+* project name
+* purpose
+* target audience
+* current product concept
+* what the website IS
+* what the website IS NOT
+* current development status
+* what has actually been implemented
+* what is still incomplete
+* current MVP scope
+
+Use the actual implementation where possible.
+
+---
+
+## B. TECH STACK
+
+Document the exact technologies currently used.
+
+Include:
+
+* React version
+* TypeScript version
+* Vite version
+* Tailwind version
+* React Router version
+* Lucide React version
+* every other installed dependency
+
+Read these from package.json rather than guessing.
+
+Also explain what each important dependency is currently used for.
+
+---
+
+## C. ACTUAL PROJECT STRUCTURE
+
+Create a complete directory tree of the important project files.
+
+For example:
+
+src/
+├── components/
+├── pages/
+├── data/
+├── hooks/
+├── lib/
+├── types/
+├── App.tsx
+├── main.tsx
+└── index.css
+
+But DO NOT use this example blindly.
+
+Generate the tree from the actual project.
+
+For important files, briefly explain their purpose.
+
+---
+
+## D. ROUTING
+
+Document EVERY route currently implemented.
+
+For each route include:
+
+* URL
+* page/component
+* whether static or dynamic
+* what it displays
+* important child components
+* links leading to it
+* whether direct URL loading works
+* whether refreshing the page works
+
+Pay special attention to dynamic routes such as:
+
+/feelings/anxiety
+
+and document how they are generated.
+
+Also document:
+
+* 404 behavior
+* unknown routes
+* internal navigation
+* navigation from homepage
+* mobile navigation
+
+---
+
+## E. HOMEPAGE
+
+Document the current homepage section by section.
+
+For each section explain:
+
+* component/file
+* purpose
+* important text/content
+* cards/buttons/links
+* destination routes
+* reusable components used
+* data sources
+
+Do NOT rewrite the homepage.
+
+Document what actually exists.
+
+---
+
+## F. FEELINGS SYSTEM
+
+This is especially important.
+
+Document:
+
+* feelings listing page
+* feeling data structure
+* all available feelings
+* dynamic routes
+* FeelingGuide component(s)
+* how content is stored
+* how a new feeling would be added
+* related situations
+* related tools
+* professional-help section
+* urgent-help handling
+* "I don't know" behavior
+
+List every currently implemented feeling and its route.
+
+If there are missing feelings from the intended list, clearly identify them.
+
+---
+
+## G. SITUATIONS
+
+Document the current Situations implementation.
+
+Include:
+
+* routes
+* components
+* data files
+* implemented situations
+* missing/planned situations
+* dynamic routing if present
+* reusable components
+* how to add a new situation
+
+Do not create missing content.
+
+---
+
+## H. LEARN
+
+Document:
+
+* Learn page
+* article/topic system
+* current topics
+* article components
+* article routing
+* data structure
+* implemented vs planned topics
+
+---
+
+## I. FAQ
+
+Document:
+
+* FAQ page
+* FAQ data
+* search/filter functionality if present
+* accordion components
+* categories if present
+* current questions
+* how to add a question
+
+---
+
+## J. TOOLS
+
+Document:
+
+* Tools page
+* every implemented tool
+* components
+* logic/state
+* whether anything stores data
+* whether anything uses browser storage
+* whether anything uses external services
+
+Clearly identify what is implemented versus placeholder/planned.
+
+---
+
+## K. FIND HELP
+
+Document the current Find Help implementation.
+
+Important:
+
+Do NOT invent or add any professionals, organizations, emergency numbers, addresses, or medical resources.
+
+Explain:
+
+* current UI
+* current data
+* whether the directory is currently empty/placeholder
+* how future verified resources are expected to be stored
+* whether filters/search exist
+* any verification mechanism currently present
+
+---
+
+## L. URGENT HELP
+
+Document the current urgent-help implementation.
+
+Include:
+
+* page/section
+* messaging
+* links
+* emergency resources if any actually exist
+* whether resources are verified or placeholders
+* components used
+
+DO NOT invent any missing emergency information.
+
+---
+
+## M. ABOUT / PRIVACY
+
+Document:
+
+* About page
+* privacy messaging
+* current claims about data
+* tracking/analytics behavior
+* account behavior
+* cookies/storage if any
+* third-party services
+
+Do not claim something is private/no-tracking unless the actual code supports it.
+
+---
+
+## N. DESIGN SYSTEM
+
+Document the ACTUAL visual system.
+
+OFFICIAL OFFLINE MIND COLORS ARE:
+
+Primary dark blue:
+#1B3C53
+
+Secondary blue:
+#234C6A
+
+Supporting blue:
+#456882
+
+Warm accent:
+#D2C1B6
+
+The intended current visual direction is:
+
+* main background: #234C6A
+* darker sections: #1B3C53
+* supporting surfaces: #456882
+* warm accent: #D2C1B6
+* light readable text on dark backgrounds
+* calm
+* modern
+* sophisticated
+* trustworthy
+* slightly dark blue
+* NOT black
+* NOT generic dark mode
+* NOT neon
+* NOT excessive gradients
+
+Document how these colors are ACTUALLY being used right now.
+
+Also document:
+
+* typography/font
+* font sizes
+* headings
+* body text
+* buttons
+* cards
+* borders
+* border radius
+* shadows
+* spacing
+* breakpoints
+* responsive behavior
+* hover states
+* focus states
+* animations/transitions
+* navigation
+* footer
+* mobile navigation
+
+Identify inconsistencies between the intended design system and the actual implementation.
+
+Do NOT redesign them.
+
+---
+
+## O. LOGO AND ASSETS
+
+Document every important asset in public/.
+
+Especially:
+
+* logo filename
+* exact path
+* file type
+* where it is imported/used
+* whether it is referenced through a reusable Logo component
+* whether there are multiple logo versions
+* image assets
+* icons
+* fonts
+* other public assets
+
+IMPORTANT:
+
+The OFFLINE MIND logo must NOT be redesigned or recreated.
+
+The current temporary logo asset may be:
+
+public/Brand/offline-mind-black.png
+
+If the project currently uses a different path, document the actual path.
+
+---
+
+## P. COMPONENT ARCHITECTURE
+
+Document reusable components.
+
+For each important component explain:
+
+* file
+* purpose
+* props
+* where it is used
+* whether it is reusable
+* dependencies
+
+Identify:
+
+* duplicated components
+* components that should probably be reusable
+* components that are currently unused
+
+Do NOT refactor them unless required for a real bug.
+
+---
+
+## Q. DATA ARCHITECTURE
+
+Document every data file.
+
+For each one explain:
+
+* file path
+* exported data
+* TypeScript types
+* structure
+* relationships between data
+* where the data is consumed
+
+Especially:
+
+* feelings
+* situations
+* topics
+* FAQ
+* tools
+* resources
+
+Explain exactly how someone should add a new item later.
+
+---
+
+## R. STATE AND STORAGE
+
+Document all state management.
+
+Check for:
+
+* React state
+* Context
+* localStorage
+* sessionStorage
+* cookies
+* URL state
+* browser APIs
+* external state libraries
+
+For every storage mechanism explain:
+
+* what is stored
+* where
+* why
+* whether it contains personal/sensitive information
+
+---
+
+## S. BACKEND / SERVICES
+
+Determine whether the project currently uses:
+
+* Supabase
+* Firebase
+* APIs
+* databases
+* server functions
+* external services
+* authentication
+* analytics
+* tracking
+* email services
+* payment services
+
+If none are used, explicitly say so.
+
+Check the code rather than assuming.
+
+---
+
+## T. ENVIRONMENT VARIABLES
+
+Find every environment variable reference.
+
+Document:
+
+* variable name
+* where it is used
+* what it appears to be for
+
+NEVER include secret values.
+
+If there are no environment variables, say so.
+
+---
+
+## U. ACCESSIBILITY
+
+Audit the implementation for:
+
+* semantic HTML
+* heading hierarchy
+* buttons vs links
+* alt text
+* keyboard navigation
+* focus states
+* color contrast
+* form labels
+* ARIA usage
+* mobile touch targets
+* reduced motion
+* screen-reader considerations
+
+Separate:
+
+1. already handled
+2. potential issues
+3. not implemented
+
+Do not fix everything automatically.
+
+---
+
+## V. SEO
+
+Document:
+
+* title
+* meta description
+* viewport
+* Open Graph
+* favicon
+* canonical URLs
+* robots
+* sitemap
+* semantic structure
+* route-specific metadata
+
+Identify what exists and what is missing.
+
+---
+
+## W. PERFORMANCE
+
+Check for obvious performance issues:
+
+* unnecessary dependencies
+* huge assets
+* duplicated rendering
+* unnecessary state
+* large bundles
+* image optimization
+* unnecessary animations
+* unused imports
+
+Do not perform a major optimization refactor.
+
+Just document findings.
+
+---
+
+## X. SECURITY
+
+Perform a basic code-level security review.
+
+Look for:
+
+* exposed secrets
+* unsafe environment variables
+* dangerous HTML injection
+* dangerouslySetInnerHTML
+* untrusted URL handling
+* unsafe external resources
+* insecure storage of sensitive information
+* suspicious dependencies
+* client-side assumptions
+
+Do not make aggressive changes.
+
+Document findings.
+
+---
+
+## Y. CONTENT / SAFETY
+
+Check whether the existing content follows the OFFLINE MIND principles:
+
+* educational, not diagnostic
+* does not pretend to be a therapist
+* does not provide harmful instructions
+* does not romanticize suicide/self-harm
+* does not stigmatize mental illness
+* encourages professional support where appropriate
+* has urgent-help pathways where appropriate
+* does not fabricate Morocco-specific resources
+
+IMPORTANT:
+
+Do not rewrite the content during this audit.
+
+Only document potential issues.
+
+---
+
+## Z. KNOWN PROBLEMS
+
+Create a clearly separated list:
+
+CRITICAL
+
+* actual issues preventing the app from working
+
+IMPORTANT
+
+* significant technical issues
+
+MINOR
+
+* small issues
+
+OPTIONAL
+
+* future improvements
+
+Do not turn design preferences into critical bugs.
+
+---
+
+## AA. UNUSED / DUPLICATED CODE
+
+Identify:
+
+* unused files
+* unused components
+* unused imports
+* unused dependencies
+* duplicate components
+* duplicate data
+* dead routes
+* placeholder code
+
+Do not delete anything unless it is unquestionably safe.
+
+---
+
+## AB. CURRENT IMPLEMENTATION STATUS
+
+Create a table:
+
+Feature | Status | Main files | Notes
+
+Include:
+
+* Homepage
+* Feelings
+* Feeling detail pages
+* Situations
+* Situation detail pages
+* Learn
+* Articles
+* FAQ
+* Tools
+* Find Help
+* Urgent Help
+* About
+* Privacy
+* Navigation
+* Responsive design
+* Accessibility
+* SEO
+* Backend
+* Authentication
+* Analytics
+* Database
+
+Use statuses such as:
+
+Implemented
+Partially implemented
+Placeholder
+Not implemented
+Unknown
+
+---
+
+## AC. FUTURE DEVELOPMENT
+
+Based ONLY on the existing project and original OFFLINE MIND concept, document logical future work.
+
+Do not implement it.
+
+Separate:
+
+Next
+Later
+Future
+
+Do not invent unrelated features.
+
+==================================================
+3. CREATE ARCHITECTURE.md
+=========================
+
+Create:
+
+ARCHITECTURE.md
+
+This should be more technical and concise than PROJECT_HANDOFF.md.
+
+Include:
+
+1. Application entry point
+2. Routing architecture
+3. Page architecture
+4. Component architecture
+5. Data architecture
+6. Design system
+7. State management
+8. Storage
+9. External services
+10. Build/development commands
+11. How to add a new feeling
+12. How to add a new situation
+13. How to add a new article/topic
+14. How to add a new FAQ
+15. How to add a new tool
+16. How to add a verified help resource later
+17. Important architectural rules
+18. Known technical limitations
+
+==================================================
+4. CREATE FILE_REFERENCE.md
+===========================
+
+Also create:
+
+FILE_REFERENCE.md
+
+This file should act as a quick map of the project.
+
+For every important source file, list:
+
+FILE:
+PATH:
+
+PURPOSE:
+
+USED BY:
+
+IMPORTANT EXPORTS:
+
+IMPORTANT DEPENDENCIES:
+
+NOTES:
+
+Include all important:
+
+* pages
+* components
+* data
+* hooks
+* utilities
+* configuration files
+* public assets
+
+Do not need to document every trivial generated/config file if it has no meaningful logic.
+
+==================================================
+5. CREATE CODEBASE_SNAPSHOT.md
+==============================
+
+Create:
+
+CODEBASE_SNAPSHOT.md
+
+This is extremely important because I cannot upload the project to the other developer/AI assistant.
+
+Include the COMPLETE TEXT of the following files inside fenced code blocks:
+
+* package.json
+* src/App.tsx
+* src/main.tsx
+* src/index.css
+
+Then include the complete text of every important routing/page/data file needed to understand the application.
+
+At minimum, if they exist:
+
+* Home page
+* Feelings page
+* Feeling detail page
+* Feelings data
+* Situations page
+* Situation detail page
+* Situations data
+* Learn page
+* Article detail page
+* Topics data
+* FAQ page
+* FAQ data
+* Tools page
+* Tools data
+* Find Help page
+* Resources data
+* Urgent Help page
+* About page
+* Navbar
+* Footer
+* Mobile navigation
+* Logo component
+* important shared UI components
+
+For each code block, clearly label the exact file path.
+
+Example:
+
+## src/App.tsx
+
+```tsx
+[complete actual file]
+```
+
+Do NOT summarize source code.
+
+Do NOT replace code with "...".
+
+Do NOT omit sections.
+
+Use the ACTUAL CURRENT FILE CONTENT.
+
+If the combined file contents are too large for one document, prioritize:
+
+1. package.json
+2. App.tsx
+3. main.tsx
+4. index.css
+5. routing
+6. pages
+7. data
+8. shared components
+9. configuration
+
+And state exactly which files were omitted due to size.
+
+==================================================
+6. BUILD AND FUNCTIONAL CHECK
+=============================
+
+Run:
+
+npm run build
+
+Fix only genuine build/runtime errors that are directly related to the current implementation.
+
+After fixing, run the build again.
+
+The final build must pass if possible.
+
+Then check:
+
+* homepage
+* every navigation link
+* every route
+* direct route loading
+* dynamic feeling routes
+* refresh on dynamic routes
+* 404
+* mobile navigation
+* logo loading
+* assets
+* console errors
+* broken imports
+* missing files
+
+Document the results.
+
+==================================================
+7. DESIGN CHECK
+===============
+
+Verify the current implementation against the OFFICIAL OFFLINE MIND design direction.
+
+Official colors:
+
+#1B3C53
+#234C6A
+#456882
+#D2C1B6
+
+The website should have:
+
+* #234C6A as the main background
+* #1B3C53 for darker sections
+* #456882 for supporting surfaces
+* #D2C1B6 as a restrained warm accent
+* readable light text
+* calm modern atmosphere
+* slightly dark blue background
+* NOT black
+* NOT generic dark mode
+* NOT neon
+* NOT excessive gradients
+* NOT excessive glassmorphism
+* NOT giant decorative blobs
+
+Document deviations.
+
+Do NOT redesign the site during this task.
+
+==================================================
+8. FINAL REPORT AT THE END OF THE REPLIT RESPONSE
+=================================================
+
+After creating all documentation files, give me a concise final report containing:
+
+1. Project status
+2. Build status
+3. Number of routes
+4. Main pages implemented
+5. Main components
+6. Main data files
+7. Dependencies
+8. Backend/services
+9. Authentication
+10. Analytics/tracking
+11. Storage
+12. Environment variables
+13. Major technical issues
+14. Minor issues
+15. Missing/planned features
+16. Important files I should preserve when exporting
+17. Recommended first steps in VS Code
+
+IMPORTANT:
+Do not simply say "everything looks good."
+
+I need factual information based on the actual codebase.
+
+==================================================
+9. DO NOT MAKE UNNECESSARY CHANGES
+==================================
+
+This task is primarily for INSPECTION and DOCUMENTATION.
+
+Do NOT:
+
+* redesign
+* change colors unless fixing an actual existing mismatch is necessary
+* change typography
+* rewrite homepage copy
+* change logo
+* add pages
+* add authentication
+* add Supabase
+* add analytics
+* add payments
+* add social features
+* add accounts
+* add unnecessary dependencies
+* add fake resources
+* add fake emergency information
+* create speculative backend architecture
+
+Only fix genuine technical issues required for the project to build/function.
+
+==================================================
+10. FINAL FILES THAT MUST EXIST
+===============================
+
+Before finishing, verify these files exist in the project root:
+
+PROJECT_HANDOFF.md
+ARCHITECTURE.md
+FILE_REFERENCE.md
+CODEBASE_SNAPSHOT.md
+
+Do not create additional documentation files beyond these four.
+
+Finally run:
+
+npm run build
+
+and report the result.
+
+DO NOT make any further changes after the final build succeeds.
+
+The purpose of this entire task is to give another developer/AI assistant enough accurate information to understand the project and continue development in VS Code without having direct access to the Replit workspace.
